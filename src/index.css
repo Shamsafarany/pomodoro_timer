@@ -1,0 +1,358 @@
+body {
+  margin: 0;
+  font-family:
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
+  background-color: #3b1f68; /* default deep purple background */
+  color: #ffffff; /* white text */
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-sizing: content-box;
+}
+
+.timer-container {
+  width: 70vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #5b2e9d;
+  border-radius: 16px;
+  padding: 20px 40px;
+  max-width: 600px;
+  margin-top: 100px;
+}
+
+.timeDisplay {
+  font-size: 6rem;
+  font-weight: 700;
+  margin: 1rem 0 2rem;
+  color: #ffffff;
+  letter-spacing: 3px;
+}
+
+.startBtn {
+  font-size: 1.25rem;
+  padding: 1rem 3rem;
+  border-radius: 7px;
+  border: none;
+  cursor: pointer;
+  background-color: #ffffff;
+  color: #9f5cff;
+  font-weight: 600;
+  transition: 0.5s;
+}
+
+.startBtn:hover {
+  background-color: #b77cff;
+  color: #ffffff;
+}
+
+.nav-buttons {
+  display: flex;
+  gap: 0.75rem;
+  margin-bottom: 1.5rem;
+}
+
+.nav-btn {
+  padding: 0.5rem 1.5rem;
+  border-radius: 10px;
+  border: none;
+  font-size: 0.95rem;
+  cursor: pointer;
+  color: #ffffff;
+  transition: 0.5s;
+  background-color: transparent;
+}
+
+.nav-btn:hover {
+  filter: brightness(1.05);
+}
+
+.mode-pomodoro .nav-btn-active {
+  background-color: #3b1f68;
+  font-weight: 600;
+}
+
+.mode-pomodoro .nav-btn-active:hover {
+  background-color: #4b2f78;
+  font-weight: 600;
+}
+
+.mode-pomodoro .startBtn {
+  color: #9f5cff;
+}
+
+.mode-pomodoro .startBtn:hover {
+  background-color: #9f5cff;
+  color: #3b1f68;
+}
+
+.mode-short .nav-btn-active {
+  background-color: #b33951;
+  font-weight: 600;
+}
+
+.mode-short .nav-btn-active:hover {
+  background-color: #d95b72;
+  font-weight: 600;
+}
+
+.mode-short .startBtn {
+  color: #b33951;
+}
+
+.mode-short .startBtn:hover {
+  background-color: #b33951;
+  color: #ffffff;
+}
+
+.mode-long .nav-btn-active {
+  background-color: #1f3c88;
+  font-weight: 600;
+}
+
+.mode-long .nav-btn-active:hover {
+  background-color: #3057b3;
+  font-weight: 600;
+}
+
+.mode-long .startBtn {
+  color: #1f3c88;
+}
+
+.mode-long .startBtn:hover {
+  background-color: #1f3c88;
+  color: #ffffff;
+}
+
+.mode-message {
+  margin-top: 1rem;
+  text-align: center;
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: #ffffff;
+}
+
+.session-tracker {
+  margin-top: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.25rem;
+  padding: 1rem 1rem;
+  border-radius: 50px;
+  background-color: rgba(255, 255, 255, 0.12);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+  margin-bottom: 50px;
+}
+
+.session-tracker__label {
+  font-size: 1.1rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  opacity: 0.9;
+}
+
+.session-tracker__count {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #ffe082;
+}
+
+.navBar {
+  width: 100%;
+  padding: 1rem;
+  background-color: #5b2e9d; /* matches timer-container */
+  color: #ffffff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+  z-index: 10;
+}
+
+.title {
+  font-size: 1.8rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.buttons {
+  display: flex;
+  gap: 1.25rem;
+  padding-right: 30px;
+}
+
+.nav-item {
+  cursor: pointer;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  transition: 0.3s;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.nav-item:hover {
+  background-color: #3b1f68;
+  filter: brightness(1.1);
+}
+
+.nav-icon {
+  font-size: 1.1rem;
+}
+.hamburger {
+  display: none;
+  cursor: pointer;
+  padding: 10px;
+  font-size: 1.4rem;
+}
+.hamburger-menu {
+  display: none;
+  position: relative;
+  cursor: pointer;
+  margin-right: 40px;
+  transition: 0.5s;
+  background-color: inherit;
+}
+.dropdown {
+  display: none;
+  position: absolute;
+  right: 0;
+  top: 2rem;
+  background-color: inherit;
+  padding: 0.5rem 0;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+  min-width: 150px;
+  z-index: 20;
+}
+.hamburger-menu:hover .dropdown {
+  display: flex;
+  flex-direction: column;
+}
+.dropdown-item {
+  padding: 0.75rem 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.dropdown-item:hover {
+  filter: brightness(1.15);
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.title > .nav-icon {
+  font-size: 2rem;
+}
+
+@media (max-width: 700px) {
+  .buttons {
+    display: none; /* hide buttons */
+  }
+  .navBar {
+    padding: 1rem 1.5rem;
+  }
+  .hamburger-menu {
+    display: block;
+  }
+  .hamburger {
+    display: block;
+  }
+  .title > .nav-icon {
+    font-size: 1.5rem;
+  }
+  .title{
+    font-size: 1.5rem;
+  }
+}
+
+.edit-time {
+  width: 30%;
+  display: flex;
+  justify-content: center;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.edit-time.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.edit-time:not(.visible) {
+  opacity: 0;
+  transform: translateY(-10px);
+  pointer-events: none;
+}
+
+.edit-form {
+  background-color: rgba(255, 255, 255, 0.12);
+  padding: 1.5rem 2rem;
+  border-radius: 14px;
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
+  backdrop-filter: blur(6px);
+}
+
+.edit-form label {
+  font-size: 0.95rem;
+  color: #ffffff;
+  font-weight: 500;
+}
+
+.edit-form input {
+  margin-top: 0.4rem;
+  padding: 0.55rem 0.75rem;
+  border-radius: 8px;
+  border: none;
+  outline: none;
+  font-size: 1rem;
+  background-color: rgba(255, 255, 255, 0.85);
+  color: #333;
+  transition: 0.25s;
+}
+
+.edit-form input:focus {
+  background-color: #ffffff;
+  box-shadow: 0 0 0 2px #5b2e9d;
+}
+
+.save-btn {
+  margin-top: 0.5rem;
+  padding: 0.7rem;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  background-color: #ffffff;
+  color: #5b2e9d;
+  font-weight: 700;
+  font-size: 1rem;
+  transition: 0.25s;
+}
+
+.save-btn:hover {
+  background-color: #e8e8e8;
+  transform: translateY(-2px);
+}
