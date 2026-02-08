@@ -3,7 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "https://Shamsafarany.github.io/PomodoroTimer",
+  "homepage": "https://Shamsafarany.github.io/pomodoro_timer",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
