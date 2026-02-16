@@ -47,7 +47,11 @@ function EditTime({
               <input
                 type="number"
                 value={pomodoro}
-                onChange={(e) => setPomodoro(Number(e.target.value))}
+                onChange={(e) => {
+                  let value = Number(e.target.value);
+                  if (value < 1) value = 1;
+                  setPomodoro(Number(e.target.value));
+                }}
                 min="1"
                 autoFocus={showSettings}
               />
@@ -58,7 +62,11 @@ function EditTime({
               <input
                 type="number"
                 value={shortBreak}
-                onChange={(e) => setShortBreak(Number(e.target.value))}
+                onChange={(e) => {
+                  let value = Number(e.target.value);
+                  if (value < 1) value = 1;
+                  setPomodoro(Number(e.target.value));
+                }}
                 min="1"
               />
             </label>
@@ -68,12 +76,21 @@ function EditTime({
               <input
                 type="number"
                 value={longBreak}
-                onChange={(e) => setLongBreak(Number(e.target.value))}
+                onChange={(e) => {
+                  let value = Number(e.target.value);
+                  if (value < 1) value = 1;
+                  setPomodoro(Number(e.target.value));
+                }}
                 min="1"
               />
             </label>
 
-            <button type="submit" className="save-btn" onSubmit={handleSubmit} aria-label="submit">
+            <button
+              type="submit"
+              className="save-btn"
+              onSubmit={handleSubmit}
+              aria-label="submit"
+            >
               Save
             </button>
           </form>
